@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "type": "physical",
+        "title": "Vinyl Box Set",
+        "artist": "Retro Artist",
+        "price": 89.99,
+        "currency": "USD",
+        "image": "/images/vinyl-pack.webp",
+        "badges": ["Signed Copy", "Merch Included"]
+    },
+    {
+        "id": 2,
+        "type": "physical",
+        "title": "Signed Vinyl LP",
+        "artist": "Indie Rockerz",
+        "price": 59.99,
+        "currency": "USD",
+        "image": "/images/vinyl-indie.webp",
+        "badges": ["Signed", "Collector's Edition"]
+    },
+    {
+        "id": 3,
+        "type": "physical",
+        "title": "Band T-Shirt",
+        "artist": "Dark Pop",
+        "price": 25.00,
+        "currency": "USD",
+        "image": "/images/shirt.webp",
+        "badges": ["Limited Size"]
+    },
+    {
+        "id": 4,
+        "type": "nft",
+        "title": "Virtual Stage Pass",
+        "artist": "Neo Synth",
+        "price": 0.8,
+        "currency": "ETH",
+        "previewUrl": "/audio/preview-neo.mp3",
+        "image": "/images/nft-stage.webp",
+        "badges": ["VR Access", "Backstage Content"]
+    },
+    {
+        "id": 5,
+        "type": "nft",
+        "title": "Cyber Dream NFT",
+        "artist": "Synth Master",
+        "price": 0.35,
+        "currency": "ETH",
+        "previewUrl": "/audio/preview-cyber.mp3",
+        "image": "/images/nft-cyber.webp",
+        "badges": ["Exclusive", "Limited Drop"]
+    },
+    {
+        "id": 6,
+        "type": "nft",
+        "title": "Exclusive Album NFT",
+        "artist": "Cyber Band",
+        "price": 0.5,
+        "currency": "ETH",
+        "previewUrl": "/audio/preview1.mp3",
+        "image": "/images/nft-cover.webp",
+        "badges": ["Limited Edition", "VR Content"]
+    }
+]  

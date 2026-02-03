@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Card {
+  display: flex;
+  min-width: 130px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,107,107,0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(78,205,196,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  /* transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); */
+}
+  
+.artist {
+  font-size: 20px;
+  font-weight: 700;
+  color: #3a3a3a;
+  margin-bottom: 12px;
+  text-align: center;
+}
+  
+.song {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  text-align: center;
+}
+    
+.duration {
+  font-size: 16px;
+  color: #757575;
+  text-align: center;
+  /* color: #999; */
+}
+
+.timing {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* flex-direction: row-reverse; */
+  width: 100%;
+  /* justify-content: space-between; */
+}
+
+.play-pause {
+  border: none;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.play-pause:hover {
+  transform: scale(1.1);
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 3px;
+  /* width: 100%; */
+  background-color: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: #757575;
+  width: 0;
+  transition: width 0.2s linear;
+  border-radius: 2px;
+}
+

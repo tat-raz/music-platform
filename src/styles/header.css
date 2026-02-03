@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        .linkHeader {
+            margin: 15px;
+            cursor: pointer;
+        }
+    }
+
+    .line {
+        height: 2px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(169, 147, 123, 0.2) 50%, 
+            transparent 100%
+        );
+        width: 100%;
+    }
+}
