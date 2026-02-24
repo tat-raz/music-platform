@@ -1,5 +1,5 @@
 import { FC } from "react";
-import '../styles/productCard.css';
+import style from './ProductCard.module.scss';
 
 
 export type Product = {
@@ -20,29 +20,29 @@ type ProductCardProps = {
     onAddToCart: () => void;
 }
 
-export const ProductCard = ({ product, onPreview, onAddToCart }: ProductCardProps) => {
+export const ProductCard: FC<ProductCardProps> = ({ product, onPreview, onAddToCart }: ProductCardProps) => {
     return (
-        <div className="ProductCard">
-            <div className={`product-card ${product.type}`}>
-                <div className="product-badges">
+        <div className={style.ProductCard}>
+            <div className={`${style.productCard} ${style[product.type]}`}>
+                <div className={style.productBadges}>
                     {product.badges?.map((badge) => (
-                        <span key={badge} className="badge">{badge}</span>
+                        <span key={badge} className={style.badge}>{badge}</span>
                     ))}
                 </div>
                 <img src={product.image} alt={product.title} />
-                <div className="product-info">
+                <div className={style.productInfo}>
                     <h4>{product.title}</h4>
-                    <p className="artist">{product.artist}</p>
-                    <div className="price">{product.price} {product.currency}</div>
-                    <div className="product-actions">
+                    <p className={style.artist}>{product.artist}</p>
+                    <div className={style.price}>{product.price} {product.currency}</div>
+                    <div className={style.productActions}>
                         {product.previewUrl && (
                             <button
-                                className="preview-btn"
+                                className={style.previewButton}
                                 onClick={() => onPreview(product.previewUrl!)}
                             >▶ Preview</button>
                         )}
                         <button
-                            className="buy-btn"
+                            className={style.buyButton}
                             onClick={onAddToCart}
                         >{product.type === 'nft' ? 'Mint NFT' : 'Add to Cart'}</button>
                     </div>

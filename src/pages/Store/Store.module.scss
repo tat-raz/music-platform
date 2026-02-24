@@ -30,18 +30,18 @@
     z-index: -1;
 }
 
-.promo-banner {
+.promoBanner {
     background-color: rgba(88, 215, 207, 0.15);
     padding: 40px 20px;
     text-align: center;
 }
 
-.promo-content h2 {
+.promoContent h2 {
     font-size: 2em;
     margin-bottom: 10px;
 }
 
-.glow-btn {
+.glowButton {
     background: #58d7cf;
     margin-top: 10px;
     color: white;
@@ -54,12 +54,12 @@
     transition: all 0.3s ease;
 }
 
-.glow-btn:hover {
+.glowButton:hover {
     background: #36aca4;
     transform: scale(1.05);
 }
 
-.shop-controls {
+.shopControls {
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
@@ -67,7 +67,7 @@
     gap: 20px;
 }
 
-.category-filters button {
+.categoryFilters button {
     background: none;
     border: 2px solid #58d7cf;
     padding: 8px 16px;
@@ -79,32 +79,38 @@
     transition: all 0.2s ease;
 }
 
-.category-filters button.active,
-.category-filters button:hover {
+.categoryFilters button.active,
+.categoryFilters button:hover {
     background: #58d7cf;
     color: white;
 }
 
-.search-sort {
+.searchSort {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.search-input {
+.searchInput {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 200px;
 }
 
-.sort-select {
+.searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(88, 215, 207, 0.25);
+    border: 1px solid #ccc;
+}
+
+.sortSelect {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-.products-grid {
+.productsGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -112,27 +118,27 @@
     padding: 40px;
 }
 
-.live-auctions {
+.liveAuctions {
     margin: 60px auto;
     max-width: 1200px;
     padding: 20px;
 }
 
-.section-title {
+.sectionTitle {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.auction-cards {
+.auctionCards {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
 
-.auction-item {
+.auctionItem {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(78, 205, 196, 0.1);
@@ -142,12 +148,12 @@
     position: relative;
 }
 
-.auction-item:hover {
+.auctionItem:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(78, 205, 196, 0.2);
 }
 
-.auction-item img {
+.auctionItem img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -166,33 +172,33 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.auction-info {
+.auctionInfo {
     padding: 15px;
 }
 
-.auction-info h4 {
+.auctionInfo h4 {
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.auction-info .artist {
+.auctionInfo .artist {
     color: #666;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
-.bid-info {
+.bidInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.current-bid {
+.currentBid {
     font-weight: bold;
     color: #292828;
 }
 
-.bid-button {
+.bidButton {
     background-color: #58d7cf;
     color: white;
     border: none;
@@ -202,12 +208,12 @@
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.bid-button:hover {
+.bidButton:hover {
     background-color: #36aca4;
     transform: scale(1.05);
 }
 
-.cart-sidebar {
+.cartSidebar {
     background-color: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(78, 205, 196, 0.2);
     border-radius: 20px;
@@ -218,12 +224,12 @@
     text-align: center;
 }
 
-.cart-sidebar h4 {
+.cartSidebar h4 {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.cart-item {
+.cartItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -232,7 +238,7 @@
     font-size: 14px;
 }
 
-.checkout-button {
+.checkoutButton {
     background-color: #4ecdc4;
     color: white;
     border: none;
@@ -244,12 +250,12 @@
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.checkout-button:hover {
+.checkoutButton:hover {
     background-color: #36aca4;
     transform: scale(1.05);
 }
 
-.remove-btn {
+.removeButton {
     background: none;
     border: none;
     color: #888;
@@ -258,11 +264,11 @@
     padding: 0 6px;
   }
   
-.remove-btn:hover {
+.removeButton:hover {
     color: #f44;
 }
   
-.cart-summary {
+.cartSummary {
     margin-top: 12px;
     font-size: 15px;
 }

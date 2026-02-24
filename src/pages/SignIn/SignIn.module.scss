@@ -3,14 +3,13 @@
     padding: 0;
 }
 
-.Register {
+.SignIn {
     background: linear-gradient(45deg, #ff6b6b30, #4ecdc430);
     font-family: 'Poppins', sans-serif;
-    /* color: #1e1e1e; */
     color: #292828;
     min-height: 100vh;
 }
-.wrapper-form {
+.form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,14 +24,15 @@
     justify-content: space-evenly;
 }
 
-.have-account {
+.haveAccount {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-btn {
+.loginButton {
     background: #58d7cf;
+    margin: 20px;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -42,16 +42,9 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.login-btn:hover {
+.loginButton:hover {
     transform: scale(1.05);
     background-color: #36aca4;
     box-shadow: 0 5px 20px rgba(78,205,196,0.3);
 }
 
-.send-btns {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    width: 300px;
-    justify-content: space-evenly;
-}

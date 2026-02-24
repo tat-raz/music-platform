@@ -10,7 +10,7 @@
     padding: 15px;
 }
 
-.product-card {
+.productCard {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(78, 205, 196, 0.1);
@@ -22,31 +22,31 @@
     position: relative;
 }
 
-.product-card:hover {
+.productCard:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(78, 205, 196, 0.2);
 }
 
-.product-card img {
-    width: 100%;
+.productCard img {
+    // width: 100%;
     height: 200px;
     object-fit: cover;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.product-info {
+.productInfo {
     padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.product-info h4 {
+.productInfo h4 {
     font-size: 18px;
     font-weight: 600;
 }
 
-.product-info .artist {
+.artist {
     font-size: 14px;
     color: #666;
 }
@@ -57,15 +57,15 @@
     color: #2d3436;
 }
 
-.product-actions {
+.productActions {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     margin-top: 10px;
 }
 
-.preview-btn,
-.buy-btn {
+.previewButton,
+.buyButton {
     padding: 8px 12px;
     font-size: 14px;
     border-radius: 8px;
@@ -74,28 +74,27 @@
     transition: all 0.2s ease-in-out;
 }
 
-.preview-btn {
+.previewButton {
     background-color: #f1f1f1;
     color: #333;
 }
 
-.preview-btn:hover {
+.previewButton:hover {
     background-color: #ddd;
 }
 
-.buy-btn {
+.buyButton {
     background-color: #58d7cf;
     color: white;
     font-weight: bold;
 }
 
-.buy-btn:hover {
+.buyButton:hover {
     background-color: #36aca4;
     transform: scale(1.05);
 }
 
-/* Badges */
-.product-badges {
+.productBadges {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -113,11 +112,10 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Type-specific accents */
-.product-card.nft {
+.productCard.nft {
     border: 2px solid #4ecdc4;
 }
 
-.product-card.physical {
+.productCard.physical {
     border: 2px solid #ffb347;
 }

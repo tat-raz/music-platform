@@ -3,61 +3,71 @@
       "id": 1,
       "title": "Neon Skyline",
       "artist": "SkyDream",
-      "duration": "3:24"
+      "duration": "3:24",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 2,
       "title": "Digital Mirage",
       "artist": "Nova Echo",
-      "duration": "4:02"
+      "duration": "4:02",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 3,
       "title": "Echoes of You",
       "artist": "The Lumen",
-      "duration": "2:57"
+      "duration": "2:57",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 4,
       "title": "Midnight Drift",
       "artist": "Chrome Flow",
-      "duration": "3:40"
+      "duration": "3:40",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 5,
       "title": "Virtual Pulse",
       "artist": "Neo Synth",
-      "duration": "4:18"
+      "duration": "4:18",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 6,
       "title": "Velvet Thunder",
       "artist": "Aether Twins",
-      "duration": "3:31"
+      "duration": "3:31",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 7,
       "title": "Cloud 9",
       "artist": "Luna Rex",
-      "duration": "2:48"
+      "duration": "2:48",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 8,
       "title": "Bassline Gravity",
       "artist": "Gravity Ink",
-      "duration": "3:56"
+      "duration": "3:56",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 9,
       "title": "Golden Path",
       "artist": "Aurora Trails",
-      "duration": "3:47"
+      "duration": "3:47",
+      "previewUrl": "/audio/demo.mp3"
     },
     {
       "id": 10,
       "title": "Afterlight",
       "artist": "RetroDrive",
-      "duration": "4:05"
+      "duration": "4:05",
+      "previewUrl": "/audio/demo.mp3"
     }
 ]
   

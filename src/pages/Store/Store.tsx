@@ -1,11 +1,14 @@
 import React, { FC, useState } from 'react';
-import { Header } from '../components/Header';
-import { Product, ProductCard } from '../components/ProductCard';
-import productData from '../data/products.json';
-import '../styles/store.css';
+import { Header } from '../../components/Header/Header';
+import { Product, ProductCard } from '../../components/ProductCard/ProductCard';
+import productData from '../../data/products.json';
+import style from './Store.module.scss';
+import { useNavigate } from "react-router-dom";
 
 
 export const Store: FC = () => {
+    const navigate = useNavigate();
+
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [sortOption, setSortOption] = useState<string>('newest');
@@ -38,19 +41,23 @@ export const Store: FC = () => {
         return totals;
     }, {});
 
+    const handleExploreDrops = () => {
+        navigate("/store");
+    }
+
     return (
-        <div className='Store'>
+        <div className={style.Store}>
             <Header />
-            <div className="promo-banner">
-                <div className="promo-content">
+            <div className={style.promoBanner}>
+                <div className={style.promoContent}>
                     <h2>NFT Music Week</h2>
                     <p>Collect limited editions with bonus AR content!</p>
-                    <button className="glow-btn">Explore Drops</button>
+                    <button className={style.glowButton} onClick={handleExploreDrops}>Explore Drops</button>
                 </div>
             </div>
 
-            <div className="shop-controls">
-                <div className="category-filters">
+            <div className={style.shopControls}>
+                <div className={style.categoryFilters}>
                     {['all', 'nft', 'physical'].map(type => (
                         <button
                             key={type}
@@ -62,15 +69,15 @@ export const Store: FC = () => {
                     ))}
                 </div>
 
-                <div className="search-sort">
+                <div className={style.searchSort}>
                     <input 
                         type="text"
                         placeholder='Search...'
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className='search-input'
+                        className={style.searchInput}
                     />
-                    <select className='sort-select' onChange={(e) => setSortOption(e.target.value)}>
+                    <select className={style.sortSelect} onChange={(e) => setSortOption(e.target.value)}>
                         <option value="newest">Newest First</option>
                         <option value="price-asc">Price: Low to High</option>
                         <option value="price-desc">Price: High to Low</option>
@@ -78,7 +85,7 @@ export const Store: FC = () => {
                 </div>
             </div>
 
-            <div className="products-grid">
+            <div className={style.productsGrid}>
                 {filtered.map(product => (
                     <ProductCard
                         key={product.id}
@@ -89,45 +96,45 @@ export const Store: FC = () => {
                 ))}
             </div>
 
-            {/* <div className="live-auctions">
-                <h3 className="section-title">Live Auctions 🔥</h3>
-                <div className="auction-cards">
-                    <div className="auction-item">
-                        <div className="timer">12h 45m left</div>
+            {/* <div className={style.liveAuctions}>
+                <h3 className={style.sectionTitle}>Live Auctions 🔥</h3>
+                <div className={style.auctionCards}>
+                    <div className={style.auctionItem}>
+                        <div className={style.timer}>12h 45m left</div>
                         <img src="/auctions/1.jpg" alt="Auction Item" />
-                        <div className="auction-info">
+                        <div className={style.auctionInfo}>
                         <h4>Unreleased Track Demo</h4>
-                        <p className="artist">Top Secret Artist</p>
-                        <div className="bid-info">
-                            <span className="current-bid">1.2 ETH</span>
-                            <button className="bid-button">Place Bid</button>
+                        <p className={style.artist}>Top Secret Artist</p>
+                        <div className={style.bidInfo}>
+                            <span className={style.currentBid}>1.2 ETH</span>
+                            <button className={style.bidButton}>Place Bid</button>
                         </div>
                         </div>
                     </div>
                 </div>
             </div> */}
 
-            <div className="cart-sidebar">
+            <div className={style.cartSidebar}>
                 <h4>Your Cart</h4>
-                <div className="cart-items">
+                <div className={style.cartItems}>
                 {cartItems.length === 0 ? (
                     <p>No items in cart.</p>
                 ) : (
                     cartItems.map((item, index) => (
-                    <div key={index} className="cart-item">
+                    <div key={index} className={style.cartItem}>
                         <p>{item.title} — {item.price} {item.currency}</p>
-                        <button className="remove-btn" onClick={() => removeFromCart(index)}>✕</button>
+                        <button className={style.removeButton} onClick={() => removeFromCart(index)}>✕</button>
                     </div>
                     ))
                 )}
                 </div>
 
                 {cartItems.length > 0 && (
-                <div className="cart-summary">
+                <div className={style.cartSummary}>
                     {Object.entries(totalByCurrency).map(([currency, total]) => (
                     <p key={currency}><strong>Total:</strong> {total.toFixed(2)} {currency}</p>
                     ))}
-                    <button className="checkout-button">Checkout with Crypto</button>
+                    <button className={style.checkoutButton}>Checkout with Crypto</button>
                 </div>
                 )}
             </div>

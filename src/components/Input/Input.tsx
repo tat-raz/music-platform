@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "../styles/input.css";
+import style from './Input.module.scss';
 
 
 interface Props {
@@ -8,14 +8,13 @@ interface Props {
     name: string;
     value: string;
     handleChange: (value1: string) => void;
-    // isError: boolean
 }
 
 export const Input: FC<Props> = ({ type, placeholder, name, value, handleChange }) => {
     return (
-        <div className="Input">
+        <div className={style.Input}>
             <input
-                className="input-label"
+                className={style.inputLabel}
                 type={type}            
                 name={name}
                 placeholder={placeholder}

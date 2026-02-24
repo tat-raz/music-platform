@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // gap: 100px;
+}
+
+.leftSide, .rightSide {
+    display: flex;
+    flex-direction: row;
+}
+
+.rightSide {
+    margin-left: 80px;
+}
+    
+.linkHeader {
+    margin: 15px;
+    cursor: pointer;
+}
+
+.line {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(169, 147, 123, 0.2) 50%, 
+        transparent 100%
+    );
+    width: 100%;
+}
+
+.authButton {
+    background: #58d7cf;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s , background-color 0.2s ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.authButton:hover {
+    transform: scale(1.02);
+    background-color: #36aca4;
+    box-shadow: 0 5px 20px rgba(78,205,196,0.3);
+}
