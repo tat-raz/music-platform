@@ -35,15 +35,18 @@ export const Register: FC = () => {
 
     const { register } = useAuth();
 
-    const handleRegister = () => {
-        const success = register(name, email, password);
-
-        if (!success) {
-            alert('User with this email already exists');
+    const handleRegister = async () => {
+        if (!name || !email || !password) {
+            alert('PLease fill in all fields');
             return;
         }
+        const success = await register(name, email, password);
 
-        navigate('/signin');
+        if (success) {
+            navigate('/signin');
+        } else {
+            alert('Registration failde');
+        }
     };
 
     return (

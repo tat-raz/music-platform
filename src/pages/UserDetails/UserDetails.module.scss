@@ -1,0 +1,130 @@
+.UserDetails {
+  min-height: 100vh;
+}
+
+.container {
+  padding: 40px 70px;
+}
+
+.backButton {
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.userCard {
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 34px;
+  margin: 0 0 24px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  strong {
+    font-size: 18px;
+  }
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+
+  th,
+  td {
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  th {
+    font-weight: 700;
+    opacity: 0.75;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.message {
+  font-size: 18px;
+}
+
+.error {
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.08);
+  color: #d93025;
+  font-weight: 600;
+}
+
+
+.timelineBlock {
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.05);
+
+  p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+}
+
+.positiveImpact {
+  font-weight: 700;
+  color: #b91c1c;
+}
+
+.negativeImpact {
+  font-weight: 700;
+  color: #15803d;
+}

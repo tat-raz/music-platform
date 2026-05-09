@@ -4,6 +4,7 @@ import { Product, ProductCard } from '../../components/ProductCard/ProductCard';
 import productData from '../../data/products.json';
 import style from './Store.module.scss';
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../../context/AuthContext';
 
 
 export const Store: FC = () => {
@@ -15,6 +16,8 @@ export const Store: FC = () => {
     const [cartItems, setCartItems] = useState<Product[]>([]);
 
     const [products, setProducts] = useState<Product[]>(productData as Product[]);
+
+    const { user } = useAuth();
 
     const filtered = products
         .filter(p =>
@@ -28,11 +31,69 @@ export const Store: FC = () => {
             return b.id - a.id; // default: newest first
     });
 
-    const addToCart = (product: Product) => {
-        setCartItems([...cartItems, product]);
+    const addToCart = async (product: Product) => {
+        if (!user) {
+            alert('Please sign in to add items to cart.');
+            return;
+        }
+
+        if (user.riskScore >= 70) {
+            await sendEvent('cart_add_blocked', {
+            productId: product.id,
+            productTitle: product.title,
+            reason: 'high_risk_score',
+            riskScore: user.riskScore,
+            });
+
+            alert('This action is blocked due to high risk activity.');
+            return;
+        }
+
+        if (user.riskScore >= 30) {
+            await sendEvent('cart_add_warning', {
+            productId: product.id,
+            productTitle: product.title,
+            reason: 'medium_risk_score',
+            riskScore: user.riskScore,
+            });
+
+            alert('Suspicious activity detected. This action will be monitored.');
+        } else {
+            await sendEvent('cart_add_success', {
+            productId: product.id,
+            productTitle: product.title,
+            riskScore: user.riskScore,
+            });
+        }
+
+        setCartItems((prev) => [...prev, product]);
     };
     
-      const removeFromCart = (index: number) => {
+    const sendEvent = async (type: string, metadata?: object) => {
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            return;
+        }
+
+        try {
+            await fetch('http://localhost:5001/api/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                type,
+                metadata,
+            }),
+            });
+        } catch (error) {
+            console.error('Failed to send event:', error);
+        }
+    };
+
+    const removeFromCart = (index: number) => {
         setCartItems((prev) => prev.filter((_, i) => i !== index));
     };
     

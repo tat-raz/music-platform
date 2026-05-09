@@ -23,15 +23,22 @@ export const SignIn: FC = () => {
 
     const { login } = useAuth();
 
-    const handleLogin = () => {
-        const success = login(email, password);
-
-        if (!success) {
-            alert("Invalid credentials");
+    const handleLogin = async () => {
+        if (!email || !password) {
+            alert('PLease fill in all fields');
             return;
         }
+        
+        const result = await login(email, password);
 
-        navigate('/home');
+        if (result.success) {
+            if (result.message) {
+                alert(result.message);
+            }
+            navigate('/');
+        } else {
+            alert(result.message || 'Invalid email or password');
+        }
     };
 
 

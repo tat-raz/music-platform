@@ -9,7 +9,7 @@ export const useAudioPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
 
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | null>(null);
     const [isSeeking, setIsSeeking] = useState(false);
 
     const handleTrackClick = (track: Track) => {
